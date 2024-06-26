@@ -1,0 +1,125 @@
+1. What is web application or client / server architecture?
+
+A web server is a software application or hardware device that stores, processes, and serves web content to users over the internet. It plays a critical role in the client-server model of the World Wide Web, where clients (typically web browsers) request web pages and resources, and servers respond to these requests by delivering the requested content.
+
+Web servers operate on the Hypertext Transfer Protocol (HTTP), which is the foundation of data communication on the World Wide Web. When you enter a website’s URL into your browser, it sends an HTTP request to the web server hosting that website, which then sends back the web page you requested, allowing you to view it in your browser.
+
+2. What is a Servlet?
+
+Java Servlets are the Java programs that run on the Java-enabled web server or application server. They are used to handle the request obtained from the web server, process the request, produce the response, and then send a response back to the web server. 
+
+3. How PrintWriter works?
+
+Unlike other writers, PrintWriter converts the primitive data ( int, float, char, etc.) into the text format. It then writes that formatted data to the writer. Also, the PrintWriter class does not throw any input/output exception. Instead, we need to use the checkError() method to find any error in it.
+
+4. What is servlet architecture?
+
+Servlets are grouped under the Advanced Java tree that is used to create dynamic web applications. Servlets are robust, well scalable, and are primarily used in developing server-side applications. If we go a little back in time, we would be able to witness that before the introduction of servlets, CGI (Common Gateway Interface) was used. Among several indigenous tasks that a servlet is capable of doing, dynamically performing client requests and responses are most common.
+
+5. What are life cycle methods of Servlet?
+
+The entire life cycle of a Servlet is managed by the Servlet container which uses the javax.servlet.Servlet interface to understand the Servlet object and manage it. So, before creating a Servlet object, let’s first understand the life cycle of the Servlet object which is actually understanding how the Servlet container manages the Servlet object.
+
+6. What is difference between doGet and doPost()?
+
+In doGet(), the parameters are appended to the URL and sent along with header information. This does not happen in case of doPost(). In doPost(), the parameters are sent separately. Since most of the web servers support only a limited amount of information to be attached to the headers, the size of this header should not exceed 1024 bytes. doPost() does not have this constraint. Usually programmers find it difficult to choose between doGet() and doPost().
+
+7. When does destroy get called?
+
+On refresh or when you navigate away from the current page (except for routing), then ngOnDestroy won't be called. The application will just be destroyed by the browser. Only when Angular2 removes the component from the DOM because you move away or you call destroy() on a dynamically created component, then ngOnDestroy() is called.
+
+8. What are ways to. Implements servlet ?
+
+There are three ways to create the servlet. By implementing the Servlet interface By inheriting the GenericServlet class By inheriting the HttpServlet class
+
+9. What are http methods?
+
+HTTP Methods
+GET
+POST
+PUT
+HEAD
+DELETE
+PATCH
+OPTIONS
+CONNECT
+TRACE
+The two most common HTTP methods are: GET and POST
+
+10. What http method used by Servlet?
+
+HttpServelt is an abstract class, it comes under package ‘javax.servlet.http.HttpServlet‘ . To create a servlet the class must extend the HttpServlet class and override at least one of its methods (doGet, doPost, doDelete, doPut). The HttpServlet class extends the GenericServlet class and implements a Serializable interface.
+ 
+11. What is difference between Generic Servlet and HttpServlet?
+
+javax.servlet.Servlet is interface, it defines methods for all the implementations - that's what interfaces usually do. javax.servlet.GenericServlet is protocol independent. It is abstract, so it is not to be directly instantiated. It is usable class to extend if you some day have to write servlet for protocol other than HTTP.
+
+12. What is the use of RequestDispatcher Interface?
+
+The RequestDispatcher is an Interface that comes under package javax.servlet. Using this interface we get an object in servlet after receiving the request. Using the RequestDispatcher object we send a request to other resources which include (servlet, HTML file, or JSP file). A RequestDispatcher object can be used to forward a request to the resource or to include the resource in a response. The resource can be dynamic or static.
+
+13. What is the difference between ServletConfig and ServletContext?
+
+ServletConfig and ServletContext, both are objects created at the time of servlet initialization and used to provide some initial parameters or configuration information to the servlet. But, the difference lies in the fact that information shared by ServletConfig is for a specific servlet, while information shared by ServletContext is available for all servlets in the web application. ServletConfig:
+
+ServletConfig is an object containing some initial parameters or configuration information created by Servlet Container and passed to the servlet during initialization.
+ServletConfig is for a particular servlet, that means one should store servlet specific information in web.xml and retrieve them using this object.
+Example: Suppose, one is building a job portal and desires to share different email ids (which may get change over time) to recruiter and job applicant. So, he decides to write two servlets one for handling recruiter’s request and another one for the job applicant. Where to store email-ids? Put email-id as a name-value pair for different servlet inside web.xml which can further be retrieved using getServletConfig().getInitParameter(“name”) in the servlet.
+
+
+14. What do you mean by InterServlet communication?
+
+ A process where two or more servlets communicates with each other to process the client request. A servlet can forward the request to another servlet to process the client request. A servlet can include the output of another servlet to process the client request.
+
+
+15. What is significance of web.xml?
+
+80
+
+The web.xml Deployment Descriptor Elements in Oracle's BEA WebLogic Server 8.1 Documentation pretty much sums up each element in a web.xml file. But I am also curious about points below:
+
+Is there any configuration parameter which should be avoided like plague?
+Any parameters related to performance or memory usage?
+Security related risk due to common mis-configuration?
+
+
+16. Explain Web Container?
+
+Web Container is a java application that controls servlet. Servlet does not have a main() method, So they require a container to load them.
+ 
+Container is a place where servlet gets deployed.
+ 
+When a client sends a request to web server that contains a servlet, the server sends that request to the container rather than to servlet directly. Container then finds out the requested servlet and pass the Http Request and response to servlet and loads the servlet methods i.e. doGet() or do Post().
+ 
+An example of a web container is Tomcat.
+ 
+Diagrams to show the request made by the client to the server and response received by the client.
+ 
+17. What do you mean by the Servlet Chaining?
+
+Taking the request from a browser window and processing that request by using multiple servlets as a chain is called servlet chaining. In servlet chaining, we perform communication between servlet programs to process the request given by a client.
+
+18. Why do we use sendredirect() method?
+
+Servlets are the Java programs that run on the server-side and generate dynamic responses to the client request. Servlet accepts the request from the browser, processes it, and generates the response to the browser. While processing the request, let’s say if need to call another servlet from a different server, we need to redirect the response to that resource. To achieve this, Java servlets provide sendRedirect() method in HttpServletResponse interface in javax.servlet.http package. To understand better, let’s look at some real-time examples.
+
+Example 1: Nowadays, there are so many online shopping sites, where we can purchase goods. Once we select the product, are ready to purchase, and click on pay, the browser will redirect to the respective online payment page. Here, the response from the shopping website redirects it to the payment page and a new URL can be seen in the browser.
+
+Example 2: In some online education applications, if we want to include a google search operation or to include a link to another website for more information on the topic, we need to redirect the response to the specific URL.
+19. What Servlet filters?
+
+A filter is an object that is invoked at the preprocessing and postprocessing of a request.
+
+It is mainly used to perform filtering tasks such as conversion, logging, compression, encryption and decryption, input validation etc.
+
+The servlet filter is pluggable, i.e. its entry is defined in the web.xml file, if we remove the entry of filter from the web.xml file, filter will be removed automatically and we don't need to change the servlet.
+
+
+20. When to use Servlet filter?
+
+Filters are part of Servlet API Since 2.3. Like a Servlet, a filter object is instantiated and managed by the Container and follows a life cycle that is similar to that of a Servlet. A Servlet has 4 stages as depicted below
+
+Instantiate.
+Initialize.
+Filter.
+destroy.
